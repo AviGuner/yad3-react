@@ -1,0 +1,184 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-top: 80px;
+
+  height: calc(100vh - 80px);
+}
+
+.App .content {
+  height: calc(100vh - 80px);
+}
+
+.App .content div {
+  transition: height 1s;
+}
+
+.Navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+
+  background-color: dodgerblue;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Navbar .ShoppingCartIcon {
+  height: 50px;
+  width: 50px;
+}
+
+.admin-link {
+  position: fixed;
+  top: 10px;
+  right: 100px;
+}
+
+.toggle-panel {
+  position: absolute;
+
+  top: 10px;
+  right: 20px;
+  background-color: blue;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+
+  cursor: pointer;
+  user-select: none;
+  transform: rotate(0);
+  transition: transform 1s;
+}
+
+.toggle-panel.reversed {
+  transform: rotate( -180deg );
+}
+
+.search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 90px;
+  height: 50px;
+
+  display: flex;
+  justify-content: space-around;
+
+  background-color: white;
+}
+
+.Listings ul {
+  list-style: none;
+  padding-top: 80px;
+  margin: 0;
+  height: calc(100% - 80px);
+
+  overflow-y: auto;
+}
+
+.Listings {
+  height: 100%;
+  position: relative;
+}
+
+.listing {
+  display: flex;
+  padding: 10px;
+}
+
+.listing img {
+  width: 50px;
+  height: 50px;
+}
+
+.listing .date {
+  font-size: 0.75rem;
+  color: #888;
+  padding: 8px;
+}
+
+.listing a {
+  text-decoration: none;
+}
+
+.listing a:hover {
+  text-decoration: underline;
+}
+
+.listing .price {
+  padding: 6px;
+}
+
+.listing .price span {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 3px;
+  font-size: 0.75rem;
+  font-weight: lighter;
+}
+
+
+.MakeListing, .Login {
+  height: calc(100% - 2px);
+  width: 100vw;
+  background-color: #ccc;
+  border-top: 2px dashed black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  position: relative;
+  overflow-y: auto;
+}
+
+
+.MakeListing label, .Login label {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.MakeListing label span, .Login label span {
+  width: 180px;
+}
+
+.MakeListing textarea {
+  resize: none;
+  height: 70px;
+  width: 250px;
+}
+
+.MakeListing input, .Login input {
+  width: 250px;
+}
+
+.MakeListing.waiting img, .Login.waiting img {
+  display: initial;
+}
+
+.MakeListing.waiting label, .Login.waiting label,
+.MakeListing.waiting button, .Login.waiting button {
+  display: none;
+}
+
+.MakeListing:not(.waiting) img, .Login:not(.waiting) img {
+  display: none;
+}
+
+.MakeListing:not(.waiting) label, .Login:not(.waiting) label,
+.MakeListing:not(.waiting) button, .Login:not(.waiting) button {
+  display: flex;
+}
